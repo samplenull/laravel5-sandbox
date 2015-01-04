@@ -1,0 +1,20 @@
+---
+- hosts: all
+  sudo: true
+  vars:
+    web_server: nginxphp
+    servername: sanbox.local www.sandbox.local 192.168.33.99
+    timezone: Europe/Kiev
+  vars_files:
+    - vars/pgsql.yml
+    - vars/common.yml
+    - [ "vars/nginxphp.yml", "vars/ws_defaults.yml" ]
+  roles:
+    - init
+    - php5-cli
+    - nginx
+    - php5-fpm
+    - pgsql
+    - composer
+    - phpcommon
+    - app
