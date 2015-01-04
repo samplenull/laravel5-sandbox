@@ -9,7 +9,7 @@ Vagrant.configure("2") do |config|
         v.customize [
             "modifyvm", :id,
             "--name", "PHP 5.6 Sandbox",
-            "--memory", 512,
+            "--memory", 1024,
             "--natdnshostresolver1", "on",
             "--cpus", 1,
         ]
@@ -31,7 +31,7 @@ Vagrant.configure("2") do |config|
         ansible.limit = 'all'
         ansible.extra_vars = {
             private_interface: "192.168.33.99",
-            hostname: "Default"
+            hostname: "default"
         }
     end
     
