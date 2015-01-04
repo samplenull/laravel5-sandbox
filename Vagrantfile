@@ -5,10 +5,10 @@
 Vagrant.configure("2") do |config|
 
     config.vm.provider :virtualbox do |v|
-        v.name = "Default"
+        v.name = "PHP 5.6 Sandbox"
         v.customize [
             "modifyvm", :id,
-            "--name", "Default",
+            "--name", "PHP 5.6 Sandbox",
             "--memory", 512,
             "--natdnshostresolver1", "on",
             "--cpus", 1,
